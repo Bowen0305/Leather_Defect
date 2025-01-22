@@ -1,7 +1,9 @@
 import faiss
 import numpy as np
 import torch
+import glob
 import os
+
 
 from torch.utils.data import Dataset, DataLoader, random_split
 
@@ -10,12 +12,15 @@ class PrivateDataset(Dataset):
         self.root = 'D:/leather_defect/data/DATASET/'
         self.img_paths, self.gt_paths, self.labels = self.load_dataset()
     
-    def load_dataset():
+    def load_dataset(self):
         img_paths = []
         gt_paths = []
         labels = [] # 0:good, 1: black, 2: wrinkle
         
-        for ['good' , '']
+        for label , i in ['good' , 'black', 'wrinkle']:
+            path = (glob.glob(self.root + label + "/*.jpg"))
+            label = 
+
 def Train_Dataloader(dataset_select):
     #data_transforms : resize images and perform pixel normalization
     data_transforms = Transform(args.resize, args.imagesize)
