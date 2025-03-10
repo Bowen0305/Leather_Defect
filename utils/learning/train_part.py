@@ -18,7 +18,7 @@ from utils.common.image_processing import PatchMaker, ForwardHook, LastLayerToEx
 from utils.common.backbones import Backbone
 
 import pickle
-import pymp
+# import pymp
 
 def min_max_norm(image, thres):
     a_min, a_max = image.min(), image.max()
