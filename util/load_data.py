@@ -3,7 +3,7 @@ import faiss
 import numpy as np
 from PIL import Image
 import torch
-from torch.utils.data import Dataset, Dataloader, random_split
+from torch.utils.data import Dataset, DataLoader, random_split
 
 from utils.common.embedding import generate_embedding_features
 from utils.common.image_processing import PatchMaker, ForwardHook, LastLayerToExtractReachedException
@@ -17,7 +17,7 @@ class LeatherDataset(Dataset):
         self.gt_transform = gt_transform
         self.img_paths, self.gt_paths, self.labels, self.types = self.load_dataset()
     
-    def __len__(self):
+    def __len__(self): 
         return len(self.img_paths)
     
     def __getitem__(self , idx):
